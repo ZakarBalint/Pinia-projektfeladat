@@ -1,12 +1,9 @@
 <script setup>
-import { RouterLink, RouterView } from 'vue-router'
+import Szinhazak from '@/views/Szinhazak.vue';
 </script>
 
 <template>
-  <RouterLink to="/">Home</RouterLink>
-  <RouterLink to="/about">About</RouterLink>    
-
-  <RouterView />
+  <Szinhazak/>
 </template>
 
 <style scoped>
