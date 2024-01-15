@@ -5,13 +5,12 @@
 
 <template>
     <select>
-        <option v-for="szinhaz in storeSzinhazak.szinhazak.neve">{{ szinhaz }}</option>
+        <option v-for="szinhaz in storeSzinhazak.szinhazak" @click="storeSzinhazak.setselectedEloadasok()">{{ szinhaz.neve }}</option>
     </select>
     <div>
         <ul>
-            <li></li>
-        </ul>
-        
+            <li v-for="eloadasok in storeSzinhazak.selectedEloadasok"><a href={{ eloadasok.url }}>{{ eloadasok.neve }}</a></li>
+        </ul>        
     </div>
 
 </template>
