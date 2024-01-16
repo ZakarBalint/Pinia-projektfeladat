@@ -3,9 +3,7 @@ import { defineStore } from 'pinia'
 
 export const useSzinhazakStore = defineStore('szinhazak', {
     state: () => ({
-        selectedEloadasok: {
-          
-        },
+        selectedEloadasok: [],
 
         szinhazak : [
           {
@@ -33,15 +31,20 @@ export const useSzinhazakStore = defineStore('szinhazak', {
               {cim : 'A nagy kézrablás', url: 'https://thalia.hu/eloadasok/a-nagy-kezrablas-2/'}
             ]
           }
-        ]
-
-        
+        ]       
     }),
 
     actions: {
-      selectedEloadasok: () => {
-        selectedEloadasok = this.eloadasok;
-      }
+
+      onChange(event) {
+        this.szinhazak.forEach(element => {
+
+          if(element.neve == event.target.value)
+          {
+            this.selectedEloadasok = element.eloadasok;
+          }          
+        });
+      },
     }
     
 })
